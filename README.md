@@ -12,7 +12,7 @@ This application was created as a way to demonstrate how to use PHP and HTML to 
 The following files are included in this project:
 
 -   index.html - The main HTML file for the application.
--   requete.php - The PHP file that queries the database for cities.
+-   request.php - The PHP file that queries the database for cities.
 -   README.md - This file, which provides information about the application.
 
 # #To run the application
