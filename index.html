@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villes</title>
+</head>
+
+<body>
+    <h1>Liste des villes en France</h1>
+
+    <form>
+        <input type="text" id="code_postal" placeholder="Entrez votre code postal" name="cp">
+        <!-- <input type="text" id="ville" placeholder="ville" name="ville"> -->
+    </form>
+    <span id="ville"></span>
+    <script>
+        // Get the code postal input element
+        const cp = document.getElementById('code_postal');
+
+        // When the code postal input element is changed
+        cp.addEventListener('keyup', function () {
+
+            // Make a request to the PHP file with the code postal value
+            fetch("requete.php?cp=" + this.value)
+                .then((response) => {
+                    // Get the response text
+                    return response.text();
+                })
+                .then((data) => {
+                    // Set the content of the ville span element to the response text
+                    document.getElementById('ville').innerHTML = data;
+                });
+        });
+    </script>
+</body>
+
+</html>
